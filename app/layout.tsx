@@ -16,14 +16,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   ),
-  title: "Villa Dar Aghir - Location villa privee avec piscine a Djerba",
+  title: "L'oasis Villa - Location villa privee avec piscine a Djerba",
   description:
-    "Villa djerbienne sans vis-a-vis a Aghir, Djerba. Piscine privee, jardin, espace enfant, salle de sport, a 5 min de la plage.",
+    "L'oasis Villa a Aghir, Djerba: villa privee sans vis-a-vis, piscine, jardin et confort premium a 5 min de la plage.",
   openGraph: {
-    title: "Villa Dar Aghir - L'Oasis Djerbienne",
+    title: "L'oasis Villa - Sejour premium a Djerba",
     description:
-      "Villa privee premium a Djerba avec piscine, jardin, espace enfant et reservation toute l'annee.",
-    images: ["/images/villa/villa-04.jpeg"],
+      "Villa djerbienne privee pour familles et amis, avec piscine, jardin et reservation toute l'annee.",
+    images: ["/images/villa/villa-15.jpeg"],
   },
 };
 
@@ -34,7 +34,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={`${headingFont.variable} ${bodyFont.variable}`}>
-      <body className="min-h-screen bg-[#f8f3ea] text-[#1f2a24]">{children}</body>
+      <body className="min-h-screen text-[#17130f]">{children}</body>
     </html>
   );
 }

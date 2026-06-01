@@ -51,7 +51,7 @@ export function BookingForm() {
   });
 
   return (
-    <form onSubmit={onSubmit} className="space-y-4 rounded-2xl bg-white/85 p-5 shadow-sm">
+    <form onSubmit={onSubmit} className="luxe-card space-y-4 rounded-2xl p-5">
       <div className="grid gap-4 md:grid-cols-2">
         <div>
           <label className="mb-1 block text-sm font-medium">Nom</label>

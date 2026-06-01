@@ -13,30 +13,30 @@ export default async function ContactPage() {
 
   const whatsappLink = toWhatsappLink(
     settings.whatsapp_number,
-    "Bonjour, je souhaite avoir plus d'informations sur la disponibilite de la Villa Dar Aghir.",
+    "Bonjour, je souhaite avoir plus d'informations sur la disponibilite de L'oasis Villa.",
   );
 
   return (
     <SiteShell>
       <div className="space-y-8 pb-16 pt-8">
-        <h1 className="font-serif text-4xl text-[#1f2a24]">Contact & Reservation</h1>
+        <h1 className="text-5xl text-[#17130f]">Contact & Reservation</h1>
         <div className="grid gap-8 md:grid-cols-2">
           <div className="space-y-4">
-            <p className="text-[#32443b]">{settings.contact_text}</p>
-            <Link href={whatsappLink} target="_blank" className="inline-block rounded-full bg-[#2f6150] px-5 py-3 text-sm font-semibold text-white">
+            <p className="text-[#4b4137]">{settings.contact_text}</p>
+            <Link href={whatsappLink} target="_blank" className="inline-block rounded-full bg-[#17130f] px-5 py-3 text-sm font-semibold text-[#f3dfbd]">
               Reserver sur WhatsApp
             </Link>
             <Link
               href={`https://m.me/${encodeURIComponent(settings.messenger_name)}`}
               target="_blank"
-              className="inline-block rounded-full border border-[#2f6150] px-4 py-2 text-sm font-semibold text-[#2f6150]"
+              className="inline-block rounded-full border border-[#7a5a2b] px-4 py-2 text-sm font-semibold text-[#7a5a2b]"
             >
               Messenger: {settings.messenger_name}
             </Link>
-            <h2 className="pt-3 font-serif text-2xl text-[#1f2a24]">Disponibilites sur demande</h2>
+            <h2 className="pt-3 text-3xl text-[#17130f]">Disponibilites sur demande</h2>
             <div className="space-y-2">
               {availability.map((block) => (
-                <div key={block.id} className="rounded-xl border border-[#d7cab5] bg-white p-3 text-sm text-[#32443b]">
+                <div key={block.id} className="luxe-card rounded-xl p-3 text-sm text-[#3a3026]">
                   <p className="font-semibold">{block.status}</p>
                   <p>
                     {block.start_date} {" -> "} {block.end_date}

@@ -7,7 +7,12 @@ import { WhatsappSticky } from "@/components/public/whatsapp-sticky";
 import { getAmenities, getHeroPhoto, getPhotos, getSiteSettings } from "@/lib/data/store";
 import { toWhatsappLink } from "@/lib/utils";
 
-const quickBadges = ["Sans vis-a-vis", "Piscine privee", "5 min plage", "Ouvert toute l'annee"];
+const quickBadges = [
+  "Sans vis-a-vis",
+  "Piscine privee",
+  "5 min plage",
+  "Ouvert toute l'annee",
+];
 
 export default async function HomePage() {
   const [settings, heroPhoto, amenities, photos] = await Promise.all([
@@ -19,8 +24,9 @@ export default async function HomePage() {
 
   const whatsappLink = toWhatsappLink(
     settings.whatsapp_number,
-    "Bonjour, je souhaite avoir plus d'informations sur la disponibilite de la Villa Dar Aghir.",
+    "Bonjour, je souhaite avoir plus d'informations sur la disponibilite de L'oasis Villa.",
   );
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "VacationRental",
@@ -46,77 +52,85 @@ export default async function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="space-y-16 pb-16 pt-8">
-        <FadeIn className="grid gap-8 md:grid-cols-2 md:items-center">
-          <div>
-            <p className="text-sm uppercase tracking-[0.2em] text-[#4a5b52]">Villa Dar Aghir - L&apos;Oasis Djerbienne</p>
-            <h1 className="mt-3 font-serif text-4xl leading-tight text-[#1f2a24] md:text-5xl">
-              {settings.hero_title}
-            </h1>
-            <p className="mt-4 text-lg text-[#32443b]">{settings.hero_subtitle}</p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link href={whatsappLink} target="_blank" className="rounded-full bg-[#2f6150] px-5 py-3 text-sm font-semibold text-white">
-                Reserver sur WhatsApp
-              </Link>
-              <Link href="/galerie" className="rounded-full border border-[#2f6150] px-5 py-3 text-sm font-semibold text-[#2f6150]">
-                Voir la galerie
-              </Link>
+
+      <div className="space-y-20 pb-20 pt-8">
+        <FadeIn className="relative overflow-hidden rounded-[2rem] border border-[#c39a5b]/35 bg-[#17130f] p-5 md:p-8">
+          <div className="grid gap-8 md:grid-cols-[1.05fr_1fr] md:items-center">
+            <div className="relative z-10 space-y-5 text-[#f6f0e7]">
+              <p className="text-xs uppercase tracking-[0.25em] text-[#f3dfbd]">
+                {settings.villa_name} - Signature Djerba
+              </p>
+              <h1 className="text-4xl leading-tight md:text-6xl">{settings.hero_title}</h1>
+              <p className="max-w-xl text-base text-[#f6f0e7]/85 md:text-lg">
+                {settings.hero_subtitle}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Link
+                  href={whatsappLink}
+                  target="_blank"
+                  className="rounded-full bg-[#f3dfbd] px-6 py-3 text-sm font-semibold text-[#17130f]"
+                >
+                  Reserver sur WhatsApp
+                </Link>
+                <Link
+                  href="/galerie"
+                  className="rounded-full border border-[#f3dfbd] px-6 py-3 text-sm font-semibold text-[#f3dfbd]"
+                >
+                  Voir la galerie
+                </Link>
+              </div>
+              <div className="flex flex-wrap gap-2 pt-2">
+                {quickBadges.map((badge) => (
+                  <span
+                    key={badge}
+                    className="rounded-full border border-[#f3dfbd]/45 px-3 py-1 text-xs text-[#f3dfbd]"
+                  >
+                    {badge}
+                  </span>
+                ))}
+              </div>
             </div>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {quickBadges.map((badge) => (
-                <span key={badge} className="rounded-full bg-[#ecdfc9] px-3 py-1 text-xs font-medium text-[#32443b]">
-                  {badge}
-                </span>
-              ))}
+
+            <div className="relative min-h-[320px] overflow-hidden rounded-[1.5rem] md:min-h-[520px]">
+              <Image
+                src={heroPhoto.image_url}
+                alt={heroPhoto.title}
+                fill
+                priority
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
             </div>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-[#d7cab5] shadow-xl">
-            <Image src={heroPhoto.image_url} alt={heroPhoto.title} fill priority className="object-cover" />
           </div>
         </FadeIn>
 
-        <section className="grid gap-4 rounded-3xl bg-[#efe5d6] p-6 md:grid-cols-3">
-          <div>
-            <p className="text-3xl font-bold text-[#1f2a24]">5 min</p>
-            <p className="text-sm text-[#4a5b52]">de la plage d&apos;Aghir</p>
-          </div>
-          <div>
-            <p className="text-3xl font-bold text-[#1f2a24]">Privatif</p>
-            <p className="text-sm text-[#4a5b52]">Piscine et jardin sans vis-a-vis</p>
-          </div>
-          <div>
-            <p className="text-3xl font-bold text-[#1f2a24]">Toute l&apos;annee</p>
-            <p className="text-sm text-[#4a5b52]">Reservation ouverte 12/12</p>
-          </div>
+        <section className="grid gap-4 md:grid-cols-3">
+          <article className="luxe-card rounded-2xl p-5">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#7a5a2b]">Emplacement</p>
+            <p className="mt-2 font-serif text-3xl">5 min</p>
+            <p className="text-sm text-[#4b4137]">de la plage d&apos;Aghir</p>
+          </article>
+          <article className="luxe-card rounded-2xl p-5">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#7a5a2b]">Confort</p>
+            <p className="mt-2 font-serif text-3xl">Piscine</p>
+            <p className="text-sm text-[#4b4137]">Espace prive et ambiance relaxante</p>
+          </article>
+          <article className="luxe-card rounded-2xl p-5">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#7a5a2b]">Disponibilite</p>
+            <p className="mt-2 font-serif text-3xl">Toute l&apos;annee</p>
+            <p className="text-sm text-[#4b4137]">Reservation ouverte 12/12</p>
+          </article>
         </section>
 
-        <section>
-          <h2 className="font-serif text-3xl text-[#1f2a24]">Presentation de la villa</h2>
-          <p className="mt-3 text-[#32443b]">{settings.presentation_text}</p>
-        </section>
-
-        <section>
-          <h2 className="font-serif text-3xl text-[#1f2a24]">Equipements</h2>
-          <div className="mt-4 grid gap-3 md:grid-cols-2">
-            {amenities.map((amenity) => (
-              <article key={amenity.id} className="rounded-xl border border-[#d7cab5] bg-white p-4">
-                <p className="font-semibold text-[#1f2a24]">{amenity.name}</p>
-                <p className="text-sm text-[#4a5b52]">{amenity.description}</p>
-              </article>
-            ))}
+        <section className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-center">
+          <div>
+            <h2 className="text-4xl text-[#17130f]">Une experience chic et authentique</h2>
+            <p className="mt-4 text-[#4b4137]">{settings.presentation_text}</p>
+            <p className="mt-3 text-[#4b4137]">{settings.experience_text}</p>
           </div>
-        </section>
-
-        <section>
-          <div className="mb-3 flex items-center justify-between">
-            <h2 className="font-serif text-3xl text-[#1f2a24]">Galerie</h2>
-            <Link href="/galerie" className="text-sm font-semibold text-[#2f6150]">
-              Voir tout
-            </Link>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {photos.slice(0, 6).map((photo) => (
-              <div key={photo.id} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+          <div className="grid grid-cols-2 gap-3">
+            {photos.slice(0, 4).map((photo) => (
+              <div key={photo.id} className="relative aspect-square overflow-hidden rounded-xl border border-[#c39a5b]/30">
                 <Image src={photo.image_url} alt={photo.title} fill loading="lazy" className="object-cover" />
               </div>
             ))}
@@ -124,27 +138,40 @@ export default async function HomePage() {
         </section>
 
         <section>
-          <h2 className="font-serif text-3xl text-[#1f2a24]">Experience famille & amis</h2>
-          <p className="mt-3 text-[#32443b]">{settings.experience_text}</p>
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="text-4xl text-[#17130f]">Equipements premium</h2>
+            <Link href="/villa" className="text-sm font-semibold text-[#7a5a2b]">
+              Tout voir
+            </Link>
+          </div>
+          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {amenities.map((amenity) => (
+              <article key={amenity.id} className="luxe-card rounded-xl p-4">
+                <p className="font-semibold text-[#17130f]">{amenity.name}</p>
+                <p className="text-sm text-[#4b4137]">{amenity.description}</p>
+              </article>
+            ))}
+          </div>
         </section>
 
-        <section className="grid gap-6 md:grid-cols-2">
-          <div>
-            <h2 className="font-serif text-3xl text-[#1f2a24]">Localisation</h2>
-            <p className="mt-3 text-[#32443b]">{settings.location_text}</p>
-            <Link href="/localisation" className="mt-4 inline-block text-sm font-semibold text-[#2f6150]">
-              Voir les details de localisation
+        <section className="grid gap-8 md:grid-cols-2">
+          <div className="luxe-card rounded-2xl p-6">
+            <h2 className="text-3xl">Localisation</h2>
+            <p className="mt-3 text-[#4b4137]">{settings.location_text}</p>
+            <Link href="/localisation" className="mt-4 inline-block text-sm font-semibold text-[#7a5a2b]">
+              Voir la localisation
             </Link>
           </div>
           <div>
-            <h2 className="font-serif text-3xl text-[#1f2a24]">Contact reservation</h2>
-            <p className="mt-3 text-[#32443b]">{settings.contact_text}</p>
+            <h2 className="text-3xl">Contact reservation</h2>
+            <p className="mt-3 text-[#4b4137]">{settings.contact_text}</p>
             <div className="mt-4">
               <BookingForm />
             </div>
           </div>
         </section>
       </div>
+
       <WhatsappSticky href={whatsappLink} />
     </SiteShell>
   );

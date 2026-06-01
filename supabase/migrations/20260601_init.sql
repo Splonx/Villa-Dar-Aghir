@@ -1,4 +1,4 @@
--- Villa Dar Aghir initial schema
+-- L'oasis Villa initial schema
 create extension if not exists "pgcrypto";
 
 create table if not exists public.profiles (
@@ -173,8 +173,8 @@ insert into public.site_settings (
 )
 values (
   'default',
-  'Villa Dar Aghir',
-  'L''Oasis Djerbienne',
+  'L''oasis Villa',
+  'Villa djerbienne privee - esprit chic et authentique',
   '0033641991176',
   'L''oasis Villa',
   'Villa djerbienne privee a 5 min de la plage d''Aghir',
@@ -183,11 +183,11 @@ values (
   'Un sejour pense pour les familles et les groupes d''amis avec calme, intimite et prestations completes.',
   'Aghir, Djerba. A 5 min de la plage, 15 min de Midoun et Houmt Souk.',
   'Reservation ouverte toute l''annee. Contactez-nous sur WhatsApp ou Messenger pour une reponse rapide.',
-  'Villa Dar Aghir - Location villa privee avec piscine a Djerba',
+  'L''oasis Villa - Location villa privee avec piscine a Djerba',
   'Villa djerbienne sans vis-a-vis a Aghir, Djerba. Piscine privee, jardin, espace enfant, salle de sport, a 5 min de la plage.',
-  'Villa Dar Aghir - L''Oasis Djerbienne',
+  'L''oasis Villa - Sejour premium a Djerba',
   'Villa privee premium a Djerba avec piscine, jardin, espace enfant et reservation toute l''annee.',
-  '/images/villa/villa-04.jpeg',
+  '/images/villa/villa-15.jpeg',
   'villa djerba, location villa aghir, villa piscine djerba',
   false
 )
@@ -210,8 +210,8 @@ on conflict do nothing;
 
 insert into public.photos (title, category, image_url, is_published, is_hero, sort_order)
 values
-  ('Facade principale', 'Exterieur', '/images/villa/villa-04.jpeg', true, true, 0),
-  ('Entree de la villa', 'Exterieur', '/images/villa/villa-19.jpeg', true, false, 1),
+  ('Piscine signature', 'Piscine', '/images/villa/villa-15.jpeg', true, true, 0),
+  ('Facade principale', 'Exterieur', '/images/villa/villa-04.jpeg', true, false, 1),
   ('Piscine privee vue aerienne', 'Piscine', '/images/villa/villa-15.jpeg', true, false, 2),
   ('Cuisine equipee', 'Cuisine', '/images/villa/villa-14.jpeg', true, false, 3),
   ('Jardin et oliviers', 'Jardin', '/images/villa/villa-12.jpeg', true, false, 4),
@@ -243,3 +243,5 @@ create policy if not exists "admin manage villa photos storage"
   on storage.objects for all
   using (bucket_id = 'villa-photos' and public.is_admin())
   with check (bucket_id = 'villa-photos' and public.is_admin());
+
+

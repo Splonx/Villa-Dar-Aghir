@@ -8,7 +8,7 @@ export async function SiteShell({ children }: Props) {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto w-full max-w-6xl px-4">{children}</main>
+      <main className="mx-auto w-full max-w-7xl px-4">{children}</main>
       <SiteFooter />
     </>
   );

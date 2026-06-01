@@ -18,7 +18,7 @@ export default async function AdminLoginPage({ searchParams }: Props) {
       <div className="w-full max-w-md rounded-2xl border border-[#d8ccb6] bg-white p-6 shadow-sm">
         <p className="text-center font-serif text-2xl text-[#1f2a24]">Connexion Admin</p>
         <p className="mt-1 text-center text-sm text-[#4a5b52]">
-          Back office Villa Dar Aghir
+          Back office L&apos;oasis Villa
         </p>
 
         {params.error ? (
@@ -58,3 +58,4 @@ export default async function AdminLoginPage({ searchParams }: Props) {
     </div>
   );
 }
+

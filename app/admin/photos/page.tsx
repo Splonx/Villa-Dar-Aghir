@@ -32,7 +32,7 @@ export default async function PhotosAdminPage() {
           <input
             name="image_url"
             required
-            placeholder="/images/villa/hero.svg ou URL"
+            placeholder="/images/villa/villa-15.jpeg ou URL"
             className="rounded-xl border px-3 py-2"
           />
           <select name="category" className="rounded-xl border px-3 py-2">
@@ -94,3 +94,4 @@ export default async function PhotosAdminPage() {
     </AdminShell>
   );
 }
+

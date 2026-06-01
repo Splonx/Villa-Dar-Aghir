@@ -245,7 +245,7 @@ export async function createPhoto(payload: Partial<Photo>) {
   const row = {
     title: payload.title ?? "Nouvelle photo",
     category: payload.category ?? "Exterieur",
-    image_url: payload.image_url ?? "/images/villa/hero.svg",
+    image_url: payload.image_url ?? "/images/villa/villa-15.jpeg",
     storage_path: payload.storage_path ?? null,
     is_published: payload.is_published ?? true,
     is_hero: payload.is_hero ?? false,
@@ -347,3 +347,4 @@ export async function getHeroPhoto() {
   const photos = await getPhotos({ publishedOnly: true });
   return photos.find((photo) => photo.is_hero) ?? photos[0] ?? defaultPhotos[0];
 }
+

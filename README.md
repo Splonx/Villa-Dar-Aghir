@@ -1,4 +1,4 @@
-# Villa Dar Aghir - L'Oasis Djerbienne
+# L'oasis Villa
 
 Application complete Next.js (front office + back office admin) pour la gestion d'une villa de location a Djerba.
 
@@ -55,7 +55,7 @@ Voir `.env.example`.
 4. Inserer le profil admin:
 ```sql
 insert into public.profiles (id, email, role)
-values ('<auth-user-id>', 'admin@daraghir.com', 'admin');
+values ('<auth-user-id>', 'admin@loasisvilla.com', 'admin');
 ```
 
 ## Storage images
@@ -97,3 +97,4 @@ values ('<auth-user-id>', 'admin@daraghir.com', 'admin');
 ## Notes
 - Sans `SUPABASE_SERVICE_ROLE_KEY`, l'application fonctionne en mode fallback (memoire + images locales) pour demonstration.
 - Pour la production, configurez Supabase completement pour persister toutes les modifications admin.
+

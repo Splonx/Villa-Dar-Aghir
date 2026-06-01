@@ -50,7 +50,7 @@ export default async function DemandesAdminPage({ searchParams }: Props) {
           </div>
         ) : (
           requests.map((request) => {
-            const whatsappMessage = `Bonjour ${request.name}, merci pour votre demande du ${request.start_date} au ${request.end_date} pour Villa Dar Aghir.`;
+            const whatsappMessage = `Bonjour ${request.name}, merci pour votre demande du ${request.start_date} au ${request.end_date} pour L'oasis Villa.`;
             return (
               <div key={request.id} className="rounded-2xl border border-[#d7cab5] bg-white p-4">
                 <div className="flex flex-wrap items-start justify-between gap-3">
@@ -93,3 +93,4 @@ export default async function DemandesAdminPage({ searchParams }: Props) {
     </AdminShell>
   );
 }
+

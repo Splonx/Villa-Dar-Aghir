@@ -4,8 +4,8 @@ const now = new Date().toISOString();
 
 export const defaultSiteSettings: SiteSettings = {
   id: "default",
-  villa_name: "Villa Dar Aghir",
-  slogan: "L'Oasis Djerbienne",
+  villa_name: "L'oasis Villa",
+  slogan: "Villa djerbienne privee - esprit chic et authentique",
   whatsapp_number: "0033641991176",
   messenger_name: "L'oasis Villa",
   hero_title: "Villa djerbienne privee a 5 min de la plage d'Aghir",
@@ -19,13 +19,13 @@ export const defaultSiteSettings: SiteSettings = {
     "Aghir, Djerba. A 5 min de la plage, 15 min de Midoun et Houmt Souk.",
   contact_text:
     "Reservation ouverte toute l'annee. Contactez-nous sur WhatsApp ou Messenger pour une reponse rapide.",
-  meta_title: "Villa Dar Aghir - Location villa privee avec piscine a Djerba",
+  meta_title: "L'oasis Villa - Location villa privee avec piscine a Djerba",
   meta_description:
     "Villa djerbienne sans vis-a-vis a Aghir, Djerba. Piscine privee, jardin, espace enfant, salle de sport, a 5 min de la plage.",
-  og_title: "Villa Dar Aghir - L'Oasis Djerbienne",
+  og_title: "L'oasis Villa - Sejour premium a Djerba",
   og_description:
     "Villa privee premium a Djerba avec piscine, jardin, espace enfant et reservation toute l'annee.",
-  og_image_url: "/images/villa/villa-04.jpeg",
+  og_image_url: "/images/villa/villa-15.jpeg",
   keywords:
     "villa djerba, location villa aghir, villa piscine djerba, villa familiale djerba",
   show_calendar: false,
@@ -138,9 +138,9 @@ export const defaultAmenities: Amenity[] = [
 export const defaultPhotos: Photo[] = [
   {
     id: "photo-1",
-    title: "Facade principale",
-    category: "Exterieur",
-    image_url: "/images/villa/villa-04.jpeg",
+    title: "Piscine signature",
+    category: "Piscine",
+    image_url: "/images/villa/villa-15.jpeg",
     storage_path: null,
     is_published: true,
     is_hero: true,
@@ -150,9 +150,9 @@ export const defaultPhotos: Photo[] = [
   },
   {
     id: "photo-2",
-    title: "Entree de la villa",
+    title: "Facade principale",
     category: "Exterieur",
-    image_url: "/images/villa/villa-19.jpeg",
+    image_url: "/images/villa/villa-04.jpeg",
     storage_path: null,
     is_published: true,
     is_hero: false,

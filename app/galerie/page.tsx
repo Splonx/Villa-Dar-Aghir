@@ -8,8 +8,8 @@ export default async function GaleriePage() {
   return (
     <SiteShell>
       <div className="space-y-6 pb-16 pt-8">
-        <h1 className="font-serif text-4xl text-[#1f2a24]">Galerie</h1>
-        <p className="text-[#32443b]">Explorez les espaces exterieurs et interieurs de la villa.</p>
+        <h1 className="text-5xl text-[#17130f]">Galerie</h1>
+        <p className="text-[#4b4137]">Explorez les espaces exterieurs et interieurs de L&apos;oasis Villa.</p>
         <GalleryGrid photos={photos} />
       </div>
     </SiteShell>

@@ -24,7 +24,7 @@ export function GalleryGrid({ photos }: Props) {
   const selected = selectedIndex !== null ? filtered[selectedIndex] : null;
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-5">
       <div className="flex flex-wrap gap-2">
         {categories.map((category) => (
           <button
@@ -33,10 +33,10 @@ export function GalleryGrid({ photos }: Props) {
               setActiveCategory(category);
               setSelectedIndex(null);
             }}
-            className={`rounded-full px-4 py-1 text-sm ${
+            className={`rounded-full px-4 py-1 text-sm transition ${
               activeCategory === category
-                ? "bg-[#2f6150] text-white"
-                : "border border-[#c8baa3] text-[#1f2a24]"
+                ? "bg-[#17130f] text-[#f3dfbd]"
+                : "border border-[#c39a5b]/45 text-[#3a3026] hover:bg-[#f3dfbd]/45"
             }`}
           >
             {category}
@@ -49,7 +49,7 @@ export function GalleryGrid({ photos }: Props) {
           <button
             key={photo.id}
             onClick={() => setSelectedIndex(index)}
-            className="group overflow-hidden rounded-2xl border border-[#d7cab5] bg-white"
+            className="group overflow-hidden rounded-2xl border border-[#c39a5b]/35 bg-white/80"
           >
             <div className="relative aspect-[4/3]">
               <Image
@@ -60,16 +60,16 @@ export function GalleryGrid({ photos }: Props) {
                 className="object-cover transition duration-300 group-hover:scale-105"
               />
             </div>
-            <p className="px-3 py-2 text-left text-sm text-[#32443b]">{photo.title}</p>
+            <p className="px-3 py-2 text-left text-sm text-[#3a3026]">{photo.title}</p>
           </button>
         ))}
       </div>
 
       {selected ? (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
           <button
             onClick={() => setSelectedIndex(null)}
-            className="absolute right-4 top-4 rounded-full bg-white px-3 py-1 text-sm"
+            className="absolute right-4 top-4 rounded-full bg-[#f3dfbd] px-3 py-1 text-sm text-[#17130f]"
           >
             Fermer
           </button>

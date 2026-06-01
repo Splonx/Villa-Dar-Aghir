@@ -8,7 +8,7 @@ export function Button({ className, type = "button", ...props }: Props) {
     <button
       type={type}
       className={cn(
-        "inline-flex items-center justify-center rounded-full bg-[#2f6150] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#234a3d] disabled:cursor-not-allowed disabled:opacity-60",
+        "inline-flex items-center justify-center rounded-full border border-[#f3dfbd] bg-[#17130f] px-5 py-3 text-sm font-semibold text-[#f3dfbd] transition hover:bg-[#f3dfbd] hover:text-[#17130f] disabled:cursor-not-allowed disabled:opacity-60",
         className,
       )}
       {...props}
