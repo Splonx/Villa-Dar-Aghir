@@ -187,7 +187,7 @@ values (
   'Villa djerbienne sans vis-a-vis a Aghir, Djerba. Piscine privee, jardin, espace enfant, salle de sport, a 5 min de la plage.',
   'Villa Dar Aghir - L''Oasis Djerbienne',
   'Villa privee premium a Djerba avec piscine, jardin, espace enfant et reservation toute l''annee.',
-  '/images/villa/hero.svg',
+  '/images/villa/villa-04.jpeg',
   'villa djerba, location villa aghir, villa piscine djerba',
   false
 )
@@ -210,12 +210,25 @@ on conflict do nothing;
 
 insert into public.photos (title, category, image_url, is_published, is_hero, sort_order)
 values
-  ('Hero villa', 'Exterieur', '/images/villa/hero.svg', true, true, 0),
-  ('Piscine privee', 'Piscine', '/images/villa/piscine.svg', true, false, 1),
-  ('Suite climatisee', 'Chambres', '/images/villa/chambre.svg', true, false, 2),
-  ('Salon djerbien', 'Salon', '/images/villa/salon.svg', true, false, 3),
-  ('Jardin', 'Jardin', '/images/villa/jardin.svg', true, false, 4),
-  ('Cuisine', 'Cuisine', '/images/villa/cuisine.svg', true, false, 5)
+  ('Facade principale', 'Exterieur', '/images/villa/villa-04.jpeg', true, true, 0),
+  ('Entree de la villa', 'Exterieur', '/images/villa/villa-19.jpeg', true, false, 1),
+  ('Piscine privee vue aerienne', 'Piscine', '/images/villa/villa-15.jpeg', true, false, 2),
+  ('Cuisine equipee', 'Cuisine', '/images/villa/villa-14.jpeg', true, false, 3),
+  ('Jardin et oliviers', 'Jardin', '/images/villa/villa-12.jpeg', true, false, 4),
+  ('Espace enfant', 'Espace enfant', '/images/villa/villa-08.jpeg', true, false, 5),
+  ('Vue exterieure 1', 'Exterieur', '/images/villa/villa-01.jpeg', true, false, 6),
+  ('Vue exterieure 2', 'Exterieur', '/images/villa/villa-02.jpeg', true, false, 7),
+  ('Salon traditionnel 1', 'Salon', '/images/villa/villa-03.jpeg', true, false, 8),
+  ('Chambre 1', 'Chambres', '/images/villa/villa-05.jpeg', true, false, 9),
+  ('Chambre 2', 'Chambres', '/images/villa/villa-06.jpeg', true, false, 10),
+  ('Salon traditionnel 2', 'Salon', '/images/villa/villa-07.jpeg', true, false, 11),
+  ('Piscine 2', 'Piscine', '/images/villa/villa-09.jpeg', true, false, 12),
+  ('Piscine 3', 'Piscine', '/images/villa/villa-10.jpeg', true, false, 13),
+  ('Cuisine 2', 'Cuisine', '/images/villa/villa-11.jpeg', true, false, 14),
+  ('Jardin 2', 'Jardin', '/images/villa/villa-13.jpeg', true, false, 15),
+  ('Chambre 3', 'Chambres', '/images/villa/villa-16.jpeg', true, false, 16),
+  ('Salon 3', 'Salon', '/images/villa/villa-17.jpeg', true, false, 17),
+  ('Vue exterieure 3', 'Exterieur', '/images/villa/villa-18.jpeg', true, false, 18)
 on conflict do nothing;
 
 insert into storage.buckets (id, name, public)

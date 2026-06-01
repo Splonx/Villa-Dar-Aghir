@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Villa Dar Aghir - L'Oasis Djerbienne",
     description:
       "Villa privee premium a Djerba avec piscine, jardin, espace enfant et reservation toute l'annee.",
-    images: ["/images/villa/hero.svg"],
+    images: ["/images/villa/villa-04.jpeg"],
   },
 };
 
